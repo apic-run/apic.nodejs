@@ -2,11 +2,22 @@
 This is a node.js module for accessing apic.run.
 
 ## Usage
+### Step 1. install
+```bash
+npm install apic.sdk --save
+```
+
+### Step 2. call endpoint with params
+```javascript
+const apic = require('apic.sdk');
+const data = await apic.run(endpoint, params);
+```
 
 ## Samples
-
 ### Get weather data from weather.service.msn.com
 ```javascript
+const apic = require('apic.sdk');
+
 let data = await apic.run('apic.weather.msn', { search: 'Shanghai' });
 let json = JSON.parse(data);
 
@@ -15,6 +26,8 @@ console.log(`Temperature is ${json[0].current.temperature} ${json[0].location.de
 
 ### Get stock data from yahoo finance api
 ```javascript
+const apic = require('apic.sdk');
+
 // get current price
 let data = await apic.run('apic.stock.yahoo.current', { ticker: 'AAPL' });
 let json = JSON.parse(data);
