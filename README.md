@@ -5,6 +5,29 @@ This is a node.js module for accessing apic.run.
 
 ## Samples
 
+### Get weather data from weather.service.msn.com
+```javascript
+let data = await apic.run('apic.weather.msn', { search: 'Shanghai' });
+let json = JSON.parse(data);
+
+console.log(`Temperature is ${json[0].current.temperature} ${json[0].location.degreetype}`);
+```
+
+### Get stock data from yahoo finance api
+```javascript
+// get current price
+let data = await apic.run('apic.stock.yahoo.current', { ticker: 'AAPL' });
+let json = JSON.parse(data);
+
+console.log(`AAPL current price is ${json.currency} ${json.price}`);
+
+// get history
+data = await apic.run('apic.stock.yahoo.history', { ticker: 'AAPL' });
+json = JSON.parse(data);
+
+console.log(json);
+```
+
 ## License
 
 (The MIT License)

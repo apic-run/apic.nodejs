@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/ray58750034/apic.sdk.nodejs/issues"
   },
-  "homepage": "https://github.com/ray58750034/apic.sdk.nodejs#readme"
+  "homepage": "https://github.com/ray58750034/apic.sdk.nodejs#readme",
+  "dependencies": {
+    "follow-redirects": "^1.13.2"
+  }
 }
